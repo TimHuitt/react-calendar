@@ -1,0 +1,14 @@
+.cal-wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px; /* Adjust the gap as per your preference */
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  height: 50px; /* Adjust the height as per your preference */
+}
