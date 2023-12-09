@@ -1,14 +1,13 @@
 import "./App.css"
+import Calendar from "../Calendar/Calendar.jsx"
 
-function App() {
+const App = () => {
 
   return (
-    <>
-      <div>
-        <h1>Running...</h1>
-      </div>
-    </>
-  )
+    <div className="App">
+      <Calendar />
+    </div>
+  );
 }
 
 export default App
