@@ -22,12 +22,10 @@ const Calendar = ({ selectedMonth, selectedYear, setMonth, setYear }) => {
   const startYear = 1900
   const endYear = 2050
   const years = Array.from({ length: endYear - startYear }, (_, index) => startYear + index)
- 
 
   const month = monthStrings.indexOf(selectedMonth)
   const nextMonth = month === 11 ? 'January' : monthStrings[month + 1]
   const prevMonth = month === 0 ? 'December' : monthStrings[month - 1]
-
 
   return (
     <div className="Calendar" key="Calendar">

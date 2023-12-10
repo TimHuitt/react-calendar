@@ -21,17 +21,18 @@
   justify-content: center;
   align-items: center;
   height: 60px;
+  width: 50px;
   font-size: 2rem;
   font-weight: bold;
   background: none;
-  border: 2px solid #222;
+  border: none;
   box-shadow: 5px 5px 5px #444;
   border-radius: 10px;
   user-select: none;
   cursor: pointer;
 }
 .month-select button:hover {
-  background: #111;
+  background: #4c4e6a;
   color: white;
 }
 .year-select {
