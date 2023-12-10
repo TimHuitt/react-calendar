@@ -15,12 +15,8 @@ const Gif = ({ newQuery }) => {
   }
   
   const handleRequest = () => {
-    newQuery.replace('International', '')
-      .replace('for ', '')
-      .replace('the ', '')
-      .replace('of ', '')
-      .replace('Day ', '')
-      .replace('World ', '')
+    newQuery = newQuery.replace(/\b(?:International|for|the|of|World)\b\s*/gi, '').trim();
+    console.log(newQuery)
     newQuery = newQuery && newQuery.length < 40 
       ? newQuery 
       : getRandomQuery()
