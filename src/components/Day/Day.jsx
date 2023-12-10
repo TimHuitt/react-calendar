@@ -64,7 +64,7 @@ const Day = ({ selectedMonth, selectedYear }) => {
           count = 0
           hidden = true
         }
-        console.log((hidden ? 'hidden' : ''))
+        
         return (
           <div key={cell} className={"cell " + (hidden ? 'hidden' : '')}>
             <div className="day-date">
@@ -73,8 +73,9 @@ const Day = ({ selectedMonth, selectedYear }) => {
             <div className="day-str">
               {content}
             </div>
-            {/* <Gif newQuery={'test'}/> */}
-            <Holiday selectedMonth={selectedMonth} currentDay={count}/>
+            { !hidden && (
+              <Holiday selectedMonth={selectedMonth} currentDay={count}/>
+            )}
           </div>
         );
       })}

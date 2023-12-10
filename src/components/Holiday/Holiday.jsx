@@ -1,5 +1,6 @@
 import holidays from "../../data/holidays.js"
 import Gif from "../Gif/Gif.jsx"
+
 import "./Holiday.css"
 
 const Holiday = ({ selectedMonth, currentDay }) => {
@@ -12,18 +13,25 @@ const Holiday = ({ selectedMonth, currentDay }) => {
           return (
             <div className="Holiday">
               {currentHolidays.map((day, index) => (
-                <div className="holiday-item" key={index + "-day"}>
-                  <small key={day.holiday}>{day.holiday}</small>
-                </div>
+                <>
+                  <Gif newQuery={ day.holiday } />
+                  <div className="holiday-item" key={index + "-day"}>
+                    <small key={day.holiday}>{day.holiday}</small>
+                  </div>
+                </>
               ))}
             </div>
+            
           );
         } else {
-          return null
+          return month === selectedMonth
+          ? <Gif newQuery={''} />
+          : null
         }
       })}
-    
       
+      
+    
     </>
   );
 };
