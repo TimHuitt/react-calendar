@@ -1,10 +1,9 @@
 import './Day.css'
 import holidays from "../../data/holidays.js"
 import Holiday from "../Holiday/Holiday.jsx"
+import Gif from "../Gif/Gif.jsx"
 
 const Day = ({ selectedMonth, selectedYear }) => {
-  const date = new Date(`${selectedMonth} 1, ${selectedYear}`)
-  const first = new Date(date.getFullYear(), date.getMonth(), 1).toDateString().split(' ')[0];
   
   const monthStrings = [
     "January",
@@ -21,9 +20,6 @@ const Day = ({ selectedMonth, selectedYear }) => {
     "December"
   ];
 
-  const monthNum = monthStrings.indexOf(selectedMonth) + 1
-  const numDays = new Date(selectedYear, monthNum, 0).getDate();
-
   const dayStrings = [
     "Sunday",
     "Monday",
@@ -34,9 +30,14 @@ const Day = ({ selectedMonth, selectedYear }) => {
     "Saturday",
   ]
 
+  const date = new Date(`${selectedMonth} 1, ${selectedYear}`)
+  const first = new Date(date.getFullYear(), date.getMonth(), 1).toDateString().split(' ')[0];
+  const monthNum = monthStrings.indexOf(selectedMonth) + 1
+  const numDays = new Date(selectedYear, monthNum, 0).getDate();
+
   const start = dayStrings.filter((d)=>d.includes(first))
   const startDay = dayStrings.indexOf(start[0])
-  console.log(startDay)
+  
   let count = 0
   let dayCount = startDay
   let hidden = true
@@ -49,7 +50,6 @@ const Day = ({ selectedMonth, selectedYear }) => {
       {cellNumbers.map((cell, index) => {
         let startCal = index === startDay
         let content
-        
         dayCount = dayCount === 7 ? 0 : dayCount
         
         if (startCal) {
@@ -70,10 +70,10 @@ const Day = ({ selectedMonth, selectedYear }) => {
             <div className="day-date">
               {count > 0 && count <= numDays ? count : ''}
             </div>
-            
             <div className="day-str">
               {content}
             </div>
+            {/* <Gif newQuery={'test'}/> */}
             <Holiday selectedMonth={selectedMonth} currentDay={count}/>
           </div>
         );

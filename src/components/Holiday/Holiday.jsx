@@ -1,5 +1,6 @@
 import holidays from "../../data/holidays.js"
 import "./Holiday.css"
+
 const Holiday = ({ selectedMonth, currentDay }) => {
   return (
     <>
@@ -20,6 +21,8 @@ const Holiday = ({ selectedMonth, currentDay }) => {
           return null
         }
       })}
+    
+      
     </>
   );
 };
