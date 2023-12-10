@@ -2,13 +2,28 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 10px; /* Adjust the gap as per your preference */
+  gap: 10px;
 }
 
 .cell {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
-  height: 50px; /* Adjust the height as per your preference */
+  height: 150px;
+}
+
+.day-str {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+.day-date {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2.5rem;
 }
