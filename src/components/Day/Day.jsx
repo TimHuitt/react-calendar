@@ -1,4 +1,6 @@
-
+import './Day.css'
+import holidays from "../../data/holidays.js"
+import Holiday from "../Holiday/Holiday.jsx"
 
 const Day = ({ selectedMonth }) => {
   const year = '2024'
@@ -70,9 +72,12 @@ const Day = ({ selectedMonth }) => {
               {content}
             </div>
 
+
+            <Holiday selectedMonth={selectedMonth} currentDay={count}/>
           </div>
         );
       })}
+
     </>
   )
 }

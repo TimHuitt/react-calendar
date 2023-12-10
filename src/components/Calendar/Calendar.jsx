@@ -83,23 +83,7 @@ const Calendar = ({ selectedMonth }) => {
       </div>
 
 
-      {Object.entries(holidays).map(([month, days]) => (
-        <div key={month}>
-          {month === selectedMonth ? (
-            <>
-              <h1>{month}</h1>
-              <Holiday days={days} />
-            </>
-          ) : (
-            selectedMonth === 'all' && (
-              <>
-                <h1>{month}</h1><p>{numDays}</p>
-                <Holiday days={days} />
-              </>
-            )
-          )}
-        </div>
-      ))}
+      
     </div>
   )
 }
