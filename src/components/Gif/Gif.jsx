@@ -15,8 +15,18 @@ const Gif = ({ newQuery }) => {
   }
   
   const handleRequest = () => {
-    newQuery = newQuery ? newQuery : getRandomQuery()
+    newQuery.replace('International', '')
+      .replace('for ', '')
+      .replace('the ', '')
+      .replace('of ', '')
+      .replace('Day ', '')
+      .replace('World ', '')
+    newQuery = newQuery && newQuery.length < 40 
+      ? newQuery 
+      : getRandomQuery()
+
     const gifURL = `https://api.giphy.com/v1/gifs/search?api_key=j1NX9kwdYBEpPxrd5A51p2Bl6470nFMY&q=${newQuery}&limit=1`
+    
     fetch(gifURL)
     .then((res) => res.json())
     .then((json) => {
@@ -35,11 +45,8 @@ const Gif = ({ newQuery }) => {
 
   return (
     <div className='gif rounded-3'>
-
       <img className="p-4 img-fluid" src={ thisGif } />
-      
       <div className="img-title d-flex justify-content-center align-items-center pb-4">
-        
       </div>
     </div>
   )

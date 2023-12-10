@@ -9,7 +9,7 @@ const App = () => {
   
   useEffect(() => {
     setMonth(selectedMonth)
-  }, [selectedMonth])
+  }, [selectedMonth, selectedYear])
 
   return (
     <div className="App">

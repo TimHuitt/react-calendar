@@ -1,6 +1,8 @@
 const holidays = {
   "January": [
+    { "date": "2023-01-01", "holiday": "New Year's Day" },
     { "date": "2023-01-04", "holiday": "World Braille Day" },
+    { "date": "2023-01-16", "holiday": "Martin Luther King Jr. Day" },
     { "date": "2023-01-24", "holiday": "International Day of Education" },
     { "date": "2023-01-26", "holiday": "International Day of Clean Energy" },
     { "date": "2023-01-27", "holiday": "International Day of Commemoration in Memory of the Victims of the Holocaust" }
@@ -15,7 +17,9 @@ const holidays = {
     { "date": "2023-02-11", "holiday": "International Day of Women and Girls in Science" },
     { "date": "2023-02-12", "holiday": "International Day for the Prevention of Violent Extremism as and when Conducive to Terrorism" },
     { "date": "2023-02-13", "holiday": "World Radio Day" },
+    { "date": "2023-02-14", "holiday": "Valentine's Day" },
     { "date": "2023-02-17", "holiday": "Global Tourism Resilience Day" },
+    { "date": "2023-02-20", "holiday": "Presidents' Day" },
     { "date": "2023-02-20", "holiday": "World Day of Social Justice" },
     { "date": "2023-02-21", "holiday": "International Mother Language Day" }
   ],
@@ -27,6 +31,7 @@ const holidays = {
     { "date": "2023-03-08", "holiday": "International Women's Day" },
     { "date": "2023-03-10", "holiday": "International Day of Women Judges" },
     { "date": "2023-03-15", "holiday": "International Day to Combat Islamophobia" },
+    { "date": "2023-03-17", "holiday": "St. Patrick's Day" },
     { "date": "2023-03-20", "holiday": "International Day of Happiness" },
     { "date": "2023-03-20", "holiday": "French Language Day" },
     { "date": "2023-03-21", "holiday": "Week of Solidarity with the Peoples Struggling against Racism and Racial Discrimination, 21-27 March" },
@@ -77,6 +82,7 @@ const holidays = {
     { "date": "2023-05-02", "holiday": "World Tuna Day" },
     { "date": "2023-05-03", "holiday": "World Press Freedom Day" },
     { "date": "2023-05-03", "holiday": "International Energy Day" },
+    { "date": "2023-05-04", "holiday": "Star Wars Day" },
     { "date": "2023-05-04", "holiday": "Coal Miners Day" },
     { "date": "2023-05-05", "holiday": "International Day of the Midwife" },
     { "date": "2023-05-07", "holiday": "World Athletics Day" },
@@ -195,7 +201,7 @@ const holidays = {
     { "date": "2023-10-24", "holiday": "World Day for Audiovisual Heritage [UNESCO]" },
     { "date": "2023-10-27", "holiday": "International Day of Care and Support" },
     { "date": "2023-10-29", "holiday": "World Cities Day" },
-    { "date": "2023-10-31", "holiday": "November" }
+    { "date": "2023-10-31", "holiday": "Halloween" },
   ],
   "November": [
     { "date": "2023-11-02", "holiday": "World Tsunami Awareness Day" },
@@ -216,7 +222,6 @@ const holidays = {
     { "date": "2023-11-25", "holiday": "World Sustainable Transport Day" },
     { "date": "2023-11-26", "holiday": "International Day of Solidarity with the Palestinian People" },
     { "date": "2023-11-29", "holiday": "Day of Remembrance for all Victims of Chemical Warfare" },
-    { "date": "2023-11-30", "holiday": "December" }
   ],
   "December": [
     { "date": "2023-12-01", "holiday": "World AIDS Day" },
@@ -237,6 +242,7 @@ const holidays = {
     { "date": "2023-12-18", "holiday": "International Human Solidarity Day" },
     { "date": "2023-12-20", "holiday": "World Basketball Day" },
     { "date": "2023-12-21", "holiday": "International Day of Epidemic Preparedness" },
+    { "date": "2023-12-25", "holiday": "Christmas Day" },
   ]
 }
 
