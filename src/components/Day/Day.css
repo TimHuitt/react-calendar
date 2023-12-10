@@ -4,8 +4,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #262636;
   border: 1px solid #ccc;
-  height: 150px;
+  border-radius: 5px;
+  height: auto;
+  user-select: none;
+  cursor: pointer;
+}
+.cell:hover {
+  background: #5c5c81;
+}
+.hidden {
+  border: none;
+  background: none;
+  pointer-events: none;
 }
 
 .day-str {

@@ -4,3 +4,50 @@
   grid-template-rows: repeat(5, 1fr);
   gap: 10px;
 }
+.month-select {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.month-select h1 {
+  width: 300px;
+  font-size: 3rem;
+  margin: 50px 40px;
+}
+.month-select button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: none;
+  border: 2px solid #222;
+  box-shadow: 5px 5px 5px #444;
+  border-radius: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+.month-select button:hover {
+  background: #111;
+  color: white;
+}
+.year-select {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+.year-select select {
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.year-select select option {
+  padding: 5px;
+
+}

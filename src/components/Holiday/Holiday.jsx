@@ -1,5 +1,5 @@
 import holidays from "../../data/holidays.js"
-
+import "./Holiday.css"
 const Holiday = ({ selectedMonth, currentDay }) => {
   return (
     <>
@@ -8,9 +8,9 @@ const Holiday = ({ selectedMonth, currentDay }) => {
 
         if (currentHolidays.length > 0 && month === selectedMonth) {
           return (
-            <div key={month + "-holiday"}>
+            <div className="Holiday">
               {currentHolidays.map((day, index) => (
-                <div key={index + "-day"}>
+                <div className="holiday-item" key={index + "-day"}>
                   <small key={day.holiday}>{day.holiday}</small>
                 </div>
               ))}

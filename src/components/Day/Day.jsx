@@ -2,9 +2,8 @@ import './Day.css'
 import holidays from "../../data/holidays.js"
 import Holiday from "../Holiday/Holiday.jsx"
 
-const Day = ({ selectedMonth }) => {
-  const year = '2024'
-  const date = new Date()
+const Day = ({ selectedMonth, selectedYear }) => {
+  const date = new Date(`${selectedMonth} 1, ${selectedYear}`)
   const first = new Date(date.getFullYear(), date.getMonth(), 1).toDateString().split(' ')[0];
   
   const monthStrings = [
@@ -23,7 +22,7 @@ const Day = ({ selectedMonth }) => {
   ];
 
   const monthNum = monthStrings.indexOf(selectedMonth) + 1
-  const numDays = new Date(year, monthNum, 0).getDate();
+  const numDays = new Date(selectedYear, monthNum, 0).getDate();
 
   const dayStrings = [
     "Sunday",
@@ -37,9 +36,11 @@ const Day = ({ selectedMonth }) => {
 
   const start = dayStrings.filter((d)=>d.includes(first))
   const startDay = dayStrings.indexOf(start[0])
+  console.log(startDay)
   let count = 0
   let dayCount = startDay
-  
+  let hidden = true
+
   const totalCells = 7 * 6
   const cellNumbers = Array.from({ length: totalCells }, (_, index) => index)
 
@@ -54,16 +55,18 @@ const Day = ({ selectedMonth }) => {
         if (startCal) {
           content = dayStrings[dayCount++]
           count++
+          hidden = false
         } else if (count > 0 && count < numDays) {
           content = dayStrings[dayCount++]
           count++
         } else {
           content = ''
           count = 0
+          hidden = true
         }
-
+        console.log((hidden ? 'hidden' : ''))
         return (
-          <div key={cell} className="cell">
+          <div key={cell} className={"cell " + (hidden ? 'hidden' : '')}>
             <div className="day-date">
               {count > 0 && count <= numDays ? count : ''}
             </div>
@@ -71,8 +74,6 @@ const Day = ({ selectedMonth }) => {
             <div className="day-str">
               {content}
             </div>
-
-
             <Holiday selectedMonth={selectedMonth} currentDay={count}/>
           </div>
         );
