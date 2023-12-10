@@ -74,6 +74,7 @@ const Day = ({ selectedMonth, selectedYear }) => {
             <div className="day-str">
               {content}
             </div>
+          
             <Holiday selectedMonth={selectedMonth} currentDay={count}/>
           </div>
         );

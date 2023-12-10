@@ -1,4 +1,5 @@
 import holidays from "../../data/holidays.js"
+import Gif from "../Gif/Gif.jsx"
 import "./Holiday.css"
 const Holiday = ({ selectedMonth, currentDay }) => {
   return (
@@ -20,6 +21,8 @@ const Holiday = ({ selectedMonth, currentDay }) => {
           return null
         }
       })}
+    
+      <Gif newQuery={'test'}/>
     </>
   );
 };
