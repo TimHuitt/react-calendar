@@ -1,7 +1,6 @@
 import './Day.css'
-import holidays from "../../data/holidays.js"
+import { Link } from "react-router-dom"
 import Holiday from "../Holiday/Holiday.jsx"
-import Gif from "../Gif/Gif.jsx"
 
 const Day = ({ selectedMonth, selectedYear }) => {
   
@@ -67,15 +66,17 @@ const Day = ({ selectedMonth, selectedYear }) => {
         
         return (
           <div key={cell} className={"cell " + (hidden ? 'hidden' : '')}>
-            <div className="day-date">
-              {count > 0 && count <= numDays ? count : ''}
-            </div>
-            <div className="day-str">
-              {content}
-            </div>
-            { !hidden && (
-              <Holiday selectedMonth={selectedMonth} currentDay={count}/>
-            )}
+            <Link to={"/details/" + cell}>
+              <div className="day-date">
+                {count > 0 && count <= numDays ? count : ''}
+              </div>
+              <div className="day-str">
+                {content}
+              </div>
+              { !hidden && (
+                <Holiday selectedMonth={selectedMonth} currentDay={count}/>
+              )}
+            </Link>
           </div>
         );
       })}

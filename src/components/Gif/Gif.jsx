@@ -8,10 +8,8 @@ const Gif = ({ newQuery }) => {
   const [ gifData, setGifData ] = useState({})
 
   const getRandomQuery = () => {
-
     const rng = Math.floor(Math.random() * words.length)
     return words[rng]
-    
   }
   
   const handleRequest = () => {
@@ -40,7 +38,7 @@ const Gif = ({ newQuery }) => {
     : ''
 
   return (
-    <div className='gif rounded-3'>
+    <div className='gif rounded-3' name={thisGif}>
       <img className="p-4 img-fluid" src={ thisGif } />
       <div className="img-title d-flex justify-content-center align-items-center pb-4">
       </div>

@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react'
 import Day from "../Day/Day.jsx"
 import "./Calendar.css"
 
-const Calendar = ({ selectedMonth, selectedYear, setMonth, setYear }) => {
+const Calendar = ({ 
+  selectedMonth, 
+  setMonth, 
+  selectedYear, 
+  setYear,
+}) => {
   
   const monthStrings = [
     "January",
