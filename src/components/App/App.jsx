@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { DataProvider } from '../../context/DataContext.jsx'
+
 import "./App.css"
 import Calendar from "../Calendar/Calendar.jsx"
 import Details from '../../pages/Details/Details.jsx'
@@ -13,12 +15,16 @@ const App = () => {
   }, [selectedMonth, selectedYear])
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={ <Calendar selectedMonth={selectedMonth} selectedYear={selectedYear} setMonth={setMonth} setYear={setYear} />} />
-        <Route path='/details/:id' element={<Details />} />
-      </Routes>
-    </div>
+    <>
+      <DataProvider>
+        <div className="App">
+          <Routes>
+            <Route path='/' element={ <Calendar selectedMonth={selectedMonth} selectedYear={selectedYear} setMonth={setMonth} setYear={setYear} />} />
+            <Route path='/details/:id' element={<Details />} />
+          </Routes>
+        </div>
+      </DataProvider>
+    </>
   );
 }
 

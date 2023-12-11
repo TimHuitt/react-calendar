@@ -13,12 +13,16 @@
   box-shadow: 3px 3px 5px #333;
   border-radius: 5px;
   user-select: none;
-  /* cursor: pointer; */
+  cursor: pointer;
   overflow-y: auto;
 }
 .cell:hover {
   background: #5c5c81;
 }
+a {
+  color: white;
+}
+
 .hidden {
   border: none;
   background: none;

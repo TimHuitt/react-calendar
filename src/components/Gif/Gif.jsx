@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import words from "../../data/words.js"
 import "./Gif.css"
+import { useDataContext } from '../../context/DataContext.jsx'
 
 
-const Gif = ({ newQuery }) => {
+const Gif = ({ newQuery, currentDay }) => {
   const [ gifData, setGifData ] = useState({})
+  const { addData } = useDataContext()
 
   const getRandomQuery = () => {
     const rng = Math.floor(Math.random() * words.length)
@@ -14,7 +16,6 @@ const Gif = ({ newQuery }) => {
   
   const handleRequest = () => {
     newQuery = newQuery.replace(/\b(?:International|for|the|of|World)\b\s*/gi, '').trim();
-    console.log(newQuery)
     newQuery = newQuery && newQuery.length < 40 
       ? newQuery 
       : getRandomQuery()
@@ -29,6 +30,7 @@ const Gif = ({ newQuery }) => {
     .catch(null)
   }
 
+
   useEffect(() => {
     handleRequest()
   }, [])
@@ -37,6 +39,14 @@ const Gif = ({ newQuery }) => {
     ? gifData[0].images.original.url
     : ''
 
+
+  useEffect(() => {
+    if (gifData.length > 0) {
+      addData({[currentDay]: gifData[0].images.original.url})
+    }
+  }, [gifData])
+  
+  
   return (
     <div className='gif rounded-3' name={thisGif}>
       <img className="p-4 img-fluid" src={ thisGif } />

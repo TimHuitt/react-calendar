@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useDataContext } from '../../context/DataContext.jsx'
 import Day from "../Day/Day.jsx"
 import "./Calendar.css"
 
@@ -8,7 +9,13 @@ const Calendar = ({
   selectedYear, 
   setYear,
 }) => {
-  
+
+  const { resetData } = useDataContext()
+
+  useEffect(() => {
+    resetData()
+  }, [])
+
   const monthStrings = [
     "January",
     "February",
