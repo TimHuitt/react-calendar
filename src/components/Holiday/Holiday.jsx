@@ -19,7 +19,7 @@ const Holiday = ({ selectedMonth, currentDay }) => {
           return (
             <div className="Holiday">
                 <>
-                  <Gif newQuery={ holiday } />
+                  <Gif newQuery={ holiday }  currentDay={currentDay} />
                   <div className="holiday-item" key={day}>
                     <small key={holiday}>{holiday}</small>
                   </div>
@@ -29,7 +29,7 @@ const Holiday = ({ selectedMonth, currentDay }) => {
 
         } else {
           return month === selectedMonth
-          ? <Gif newQuery={''} />
+          ? <Gif newQuery={''} currentDay={currentDay}/>
           : null
         }
       })}
